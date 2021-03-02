@@ -46,7 +46,7 @@ declare module "math/Mat3" {
         identity(): void;
         setZero(): void;
         setTrace(vector: Vec3): void;
-        getTrace(target?: Vec3): void;
+        getTrace(target?: Vec3): Vec3;
         vmult(v: Vec3, target?: Vec3): Vec3;
         smult(s: number): void;
         mmult(matrix: Mat3, target?: Mat3): Mat3;
@@ -1079,6 +1079,7 @@ declare module "objects/Body" {
         pointToWorldFrame(localPoint: Vec3, result?: Vec3): Vec3;
         vectorToWorldFrame(localVector: Vec3, result?: Vec3): Vec3;
         addShape(shape: Shape, _offset?: Vec3, _orientation?: Quaternion): Body;
+        removeShape(shape: Shape): Body;
         updateBoundingRadius(): void;
         computeAABB(): void;
         updateInertiaWorld(force?: boolean): void;
